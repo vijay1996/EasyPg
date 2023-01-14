@@ -4,8 +4,6 @@
 ### Introduction
 *Inspired by Springboot, this package offers SQL query integration to a nodeJs application. Just a few imports will make life a lot easier. You now do not have to manually write db queries. All the basic queries like select, select based on columns, insert, update and delete is now possible via simple function calls. Moreover, updates are in way to provide support for joins and other db features. If you are using Postgresql as you db, connecting to a server is also simplified. Kindly find all the function applications in the demo below.*
 
-<br>
-
 ### 2. Entity class
 
 #### 2.1 Initialization
@@ -36,8 +34,6 @@ let user:User = new User('users', 'id', columns)
 > - ***'user'*** is a string that represents the name of the table.
 > - ***'id'*** is a string that represents the name of the primary key.
 > - ***columns*** is an array that contains the names of the columns in the table.
-
-<br>
 
 #### 2.2 SELECT
 
