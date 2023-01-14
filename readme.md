@@ -6,9 +6,9 @@
 
 <br>
 
-### 1. Entity class
+### 2. Entity class
 
-#### 1.1. Initialization
+#### 2.1. Initialization
 
 This class represents a table against which sql queries will be generated. initialization of this class is as shown below -
 
@@ -39,11 +39,23 @@ let user:User = new User('users', 'id', columns)
 
 <br>
 
-#### 1.2. SELECT *
+#### 2.2. SELECT *
 
-##### 1.2.1 By primary key
+##### 2.2.1 By primary key
 
 This is the first method that will fetch a record based on the primary key specified. The syntax of the method is shown below - 
 ```typescript
-
+let result:any;
+try {
+    result = await conn.query({text: user.get(request.params.id), params: null}); 
+} catch (error) {
+    if (error instanceof EasyPgError) {
+        response.json(error.getJSON());
+    } else {
+        response.json({error: "unidentified error occured"});
+    }
+}
+response.json(result);
 ```
+> Here, it can be observed that the User class which was initialized in previous section has a method called get. Invoking this method with the primary key value will return the user record.
+> It can also be seen that any error that occurs is handled using another custom class ***EasyPgError***.
