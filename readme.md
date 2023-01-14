@@ -35,6 +35,8 @@ let user:User = new User('users', 'id', columns)
 > - ***'id'*** is a string that represents the name of the primary key.
 > - ***columns*** is an array that contains the names of the columns in the table.
 
+<br>
+
 #### 1.2. SELECT *
 
 ##### 1.2.1 By primary key
