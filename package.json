@@ -1,8 +1,8 @@
 {
   "name": "@vbr96/easypg",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Easy node and postgresql integration to run queries.",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p .",
@@ -38,6 +38,6 @@
   "dependencies": {
     "pg": "^8.8.0"
   },
-  "files": ["lib/**/*", "src/**/*"],
+  "files": ["lib/**/*"],
   "types": "lib/*.d.ts"
 }
