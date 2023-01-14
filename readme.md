@@ -8,7 +8,7 @@
 
 ### 2. Entity class
 
-#### 2.1. Initialization
+#### 2.1 Initialization
 
 This class represents a table against which sql queries will be generated. initialization of this class is as shown below -
 
@@ -39,7 +39,7 @@ let user:User = new User('users', 'id', columns)
 
 <br>
 
-#### 2.2. SELECT *
+#### 2.2 SELECT
 
 ##### 2.2.1 By primary key
 
@@ -58,4 +58,27 @@ try {
 response.json(result);
 ```
 > Here, it can be observed that the User class which was initialized in previous section has a method called get. Invoking this method with the primary key value will return the user record.
-> It can also be seen that any error that occurs is handled using another custom class ***EasyPgError***.
+> It can also be seen that any error that occurs is handled using a custom error class ***EasyPgError***.
+
+#### 2.2.2 By column names
+
+This method is handy when a record or multiple records have to be fetched based on columns other than the primary key. Here is the syntax of the method - 
+```typescript
+user.setColumns(columns);
+user.setValues(values);
+
+let result: any;
+try {
+    result = await conn.query({text: user.getByColumnNames(), params: null});
+} catch (error) {
+    if (error instanceof EasyPgError) {
+        response.json(error.getJSON());
+    } else {
+        response.json({error: "unidentified error occured"});
+    }
+}
+response.json(result);
+```
+> Here, the setters ***setColumns*** and ***setValues*** are used to set the columns using which records have to be fetched and their corresponding values.
+> Then, ***getByColumnNames*** method of the user class can be used to fetch based on column criteria set using the setters - ***setColumns*** and ***setValues***.
+> Like in previous section,  any error that occurs is handled using a custom error class ***EasyPgError***.
