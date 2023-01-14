@@ -1,6 +1,6 @@
 {
   "name": "@vbr96/easypg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easy node and postgresql integration to run queries.",
   "main": "src/index.ts",
   "scripts": {
