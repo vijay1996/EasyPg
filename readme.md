@@ -11,6 +11,7 @@ This class represents a table against which sql queries will be generated. initi
 > Instead of directly creating a new instance of entity class, an intermediate class in the name of
 > the table is created. Any table related logic can be defined in this class. This way, the code looks 
 > cleaner and more organised.
+
 ```typescript
 import { Entity } from "@vbr96/easypg/lib";
 import {cloneDeep} from "lodash"
@@ -24,6 +25,7 @@ export class User extends Entity {
 }
 ```
 > Later on, an instance of this intermediate class can be initialized to perform operations.
+
 ```typescript
 const columns = ['id', 'name', 'email', 'password', 'community']
 let user:User = new User('users', 'id', columns)
