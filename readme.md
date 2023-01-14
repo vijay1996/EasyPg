@@ -6,6 +6,8 @@
 
 ### 1. Entity class
 This class represents a table against which sql queries will be generated. initialization of this class is as shown below - <br>
+```
     const columns = ['id', 'name', 'email', 'password', 'community']
     let user:User = new User('users', 'id', columns)
+```
 <br>Here,<br>    ***'user'*** is a string that represents the name of the table.<br>    ***'id'*** is a string that represents the name of the primary key.<br>    ***columns*** is an array that contains the names of the columns in the table.
