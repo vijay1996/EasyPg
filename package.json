@@ -1,0 +1,41 @@
+{
+  "name": "easypg",
+  "version": "1.0.0",
+  "description": "Easy node and postgresql integration to run queries.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p .",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijay1996/EasyPg.git"
+  },
+  "keywords": [
+    "postgres",
+    "postgresql",
+    "pg",
+    "node",
+    "queries",
+    "run",
+    "queries",
+    "easily",
+    "node",
+    "pg",
+    "integration"
+  ],
+  "author": "Vijaybhoj Raj C M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vijay1996/EasyPg/issues"
+  },
+  "homepage": "https://github.com/vijay1996/EasyPg#readme",
+  "devDependencies": {
+    "@types/pg": "^8.6.6",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "pg": "^8.8.0"
+  }
+}
