@@ -5,13 +5,12 @@
 *Inspired by Springboot, this package offers SQL query integration to a nodeJs application. Just a few imports will make life a lot easier. You now do not have to manually write db queries. All the basic queries like select, select based on columns, insert, update and delete is now possible via simple function calls. Moreover, updates are in way to provide support for joins and other db features. If you are using Postgresql as you db, connecting to a server is also simplified. Kindly find all the function applications in the demo below.*
 
 ### 1. Entity class
-<br>
+
 #### 1.1. Initialization
+
 This class represents a table against which sql queries will be generated. initialization of this class is as shown below -
 
-> Instead of directly creating a new instance of entity class, an intermediate class in the name of
-> the table is created. Any table related logic can be defined in this class. This way, the code looks 
-> cleaner and more organised.
+> Instead of directly creating a new instance of entity class, an intermediate class that extends the Entity class is created in the name of the table. Any table related logic can be defined in this class. This way, the code looks cleaner and more organised. Here, ***tableName***, ***primaryKey*** and ***columns*** are included in constructor as mandatory parameters though Entity class require only ***tableName*** and ***primaryKey***. 
 
 ```typescript
 import { Entity } from "@vbr96/easypg/lib";
@@ -25,7 +24,7 @@ export class User extends Entity {
     }
 }
 ```
-> Later on, an instance of this intermediate class can be initialized to perform operations.
+> Later on, an instance of this intermediate class can be initialized to perform operations as shown below.
 
 ```typescript
 const columns = ['id', 'name', 'email', 'password', 'community']
