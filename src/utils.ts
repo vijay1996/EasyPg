@@ -1,10 +1,5 @@
 import { AddQueryExpressionInterface, MessageInterface } from "./interfaces";
 
-/** A simple function to deep copy objects or arrays */
-async function deepCopy(object1: any, object2: any): Promise<void> {
-    object1 = await JSON.parse(JSON.stringify(object2));
-}
-
 /** Return partial expressions that is used while building db queries */
 function createEquateExpressions (columnNames: string[], columlnValues: any[], action: string, delimiter: string, primaryKey: string | null = null): string | MessageInterface | AddQueryExpressionInterface {
     if (columlnValues.length !== columnNames.length) {
@@ -84,7 +79,6 @@ const delimiters = {
 }
 
 export {
-    deepCopy,
     createEquateExpressions,
     db_actions,
     db_messages,
