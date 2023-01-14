@@ -9,7 +9,7 @@ export default class Entity {
     private columns:string[] = []; /** This field holds an array of all the table columns */
     private values:any[] = []
 
-    constructor(tableName:string, primaryKey:string, columnNames:string[]) {
+    constructor(tableName:string, primaryKey:string) {
         this.tableName = tableName;
         this.primaryKey = primaryKey;
     }
