@@ -8,6 +8,7 @@
 <br>
 #### 1.1. Initialization
 This class represents a table against which sql queries will be generated. initialization of this class is as shown below -
+
 > Instead of directly creating a new instance of entity class, an intermediate class in the name of
 > the table is created. Any table related logic can be defined in this class. This way, the code looks 
 > cleaner and more organised.
