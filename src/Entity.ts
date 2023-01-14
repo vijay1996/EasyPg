@@ -1,6 +1,7 @@
 import EasyPgError from "./EasyPgError";
 import { AddQueryExpressionInterface } from "./interfaces";
 import { createEquateExpressions, db_actions, db_messages, delimiters } from "./utils";
+import { cloneDeep } from "lodash";
 
 export default class Entity {
 
@@ -15,11 +16,11 @@ export default class Entity {
     }
 
     setColumns(columns:string[]) {
-        this.columns = structuredClone(columns);
+        this.columns = cloneDeep(columns);
     }
 
     setValues(values: any[]){
-        this.values = structuredClone(values);
+        this.values = cloneDeep(values);
     }
 
     /** Returns a select query using the provided primary key value */
