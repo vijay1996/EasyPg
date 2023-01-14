@@ -39,7 +39,7 @@ let user:User = new User('users', 'id', columns)
 
 ##### 2.2.1 By primary key
 
-This is the first method that will fetch a record based on the primary key specified. The syntax of the method is shown below - 
+This is the first method that will create a query to fetch a record based on the primary key specified. The syntax of the method is shown below - 
 ```typescript
 let result:any;
 try {
@@ -58,7 +58,7 @@ response.json(result);
 
 #### 2.2.2 By column names
 
-This method is handy when a record or multiple records have to be fetched based on columns other than the primary key. Here is the syntax of the method - 
+This method is handy when a query has to be generated where single or multiple records have to be fetched based on columns other than the primary key. Here is the syntax of the method - 
 ```typescript
 user.setColumns(columns);
 user.setValues(values);
@@ -77,4 +77,26 @@ response.json(result);
 ```
 > Here, the setters ***setColumns*** and ***setValues*** are used to set the columns using which records have to be fetched and their corresponding values.
 > Then, ***getByColumnNames*** method of the user class can be used to fetch based on column criteria set using the setters - ***setColumns*** and ***setValues***.
+> Like in previous section,  any error that occurs is handled using a custom error class ***EasyPgError***.
+
+#### 2.3 INSERT
+The next method in the Entity class is used for creating insert query. Application of this method is shown below - 
+```typescript
+user.setColumns(user.defaultColumns);
+user.setValues(values);
+
+let result:any;
+try {
+    result = await conn.query({text: user.insert(true), params: null})
+} catch (error) {
+    if (error instanceof EasyPgError) {
+        response.json(error.getJSON());
+    } else {
+        response.json({error: "unidentified error occured"});
+    }
+}
+response.json(db_messages.INSERT_SUCCESS)
+```
+> Here, similar to the previous section, setters are used to provide the column names and corresponding value.
+> The user class now has ***insert*** method that can be used to insert records into the table.
 > Like in previous section,  any error that occurs is handled using a custom error class ***EasyPgError***.
