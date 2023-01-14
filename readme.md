@@ -6,7 +6,7 @@
 
 ### 1. Entity class
 This class represents a table against which sql queries will be generated. initialization of this class is as shown below -
-```
+```typescript
     const columns = ['id', 'name', 'email', 'password', 'community']
     let user:User = new User('users', 'id', columns)
 ```
