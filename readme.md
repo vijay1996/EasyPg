@@ -30,10 +30,15 @@ export class User extends Entity {
 const columns = ['id', 'name', 'email', 'password', 'community']
 let user:User = new User('users', 'id', columns)
 ```
-Here,<br>    ***'user'*** is a string that represents the name of the table.<br>    ***'id'*** is a string that represents the name of the primary key.<br>    ***columns*** is an array that contains the names of the columns in the table.
-<br>
+> Here, 
+> - ***'user'*** is a string that represents the name of the table.
+> - ***'id'*** is a string that represents the name of the primary key.
+> - ***columns*** is an array that contains the names of the columns in the table.
+
 #### 1.2. SELECT *
+
 ##### 1.2.1 By primary key
+
 This is the first method that will fetch a record based on the primary key specified. The syntax of the method is shown below - 
 ```typescript
 
