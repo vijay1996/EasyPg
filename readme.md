@@ -11,7 +11,7 @@ let conn:Connection = new Connection(env.connectionString as string, env.dbLoggi
 ```
 here, connectionString is the PostgreSQL connection url that looks like something below - 
 ```
-"postgres://vijay:vbr96@localhost:5432/threeknots?sslmode=disable"
+"postgres://user:password@host:port/dbname?sslmode=disable"
 ```
 And the second parameter is a boolean which when set to true, will log each query run by the connection into console.
 Now the ***conn*** variable will have ***query*** method that can be used to run queries as shown below -
